@@ -4,12 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blink - Minimalist App</title>
+    <title id="page-title">Blink - Speed Reading</title>
+    <link rel="icon" id="favicon" type="image/svg+xml" href="Assets/Glyph.svg">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+<script>
+    // Dynamic favicon for dark mode
+    function setFaviconForTheme() {
+        const favicon = document.getElementById('favicon');
+        if (!favicon) return;
+        const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        favicon.href = dark ? 'Assets/Glyph-white.svg' : 'Assets/Glyph.svg';
+    }
+    setFaviconForTheme();
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setFaviconForTheme);
+</script>
 
 <body>
     <header>
@@ -43,9 +55,8 @@
                         </div>
                     </div>
 
-                    <h1 data-i18n="hero-title">Clutter-free focus.</h1>
-                    <p data-i18n="hero-desc">A thoughtfully designed application built to keep distractions away and
-                        help you find your flow.</p>
+                    <h1 data-i18n="hero-title">-</h1>
+                    <p data-i18n="hero-desc">-</p>
 
                     <div class="cta-container">
                         <div class="download-section">

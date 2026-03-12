@@ -65,6 +65,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateUI() {
         // Update language attribute
         document.documentElement.lang = currentLang === 'pt' ? 'pt-BR' : 'en';
+        // Update page title
+        const pageTitle = document.getElementById('page-title');
+        if (pageTitle) {
+            pageTitle.textContent = currentLang === 'pt' ? 'Blink - Leitura Rápida' : 'Blink - Speed Reading';
+        } else {
+            document.title = currentLang === 'pt' ? 'Blink - Leitura Rápida' : 'Blink - Speed Reading';
+        }
 
         // Determine active OS
         const activeOs = currentOs === 'auto' ? autoOs : currentOs;
@@ -96,8 +103,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentAppleBadge = currentLang === 'pt' ? appleBadgePt : appleBadgeEn;
         const currentPlayBadge = currentLang === 'pt' ? playBadgePt : playBadgeEn;
 
-        const appleHtml = `<a href="${appleLink}" target="_blank" rel="noopener noreferrer"><img src="${currentAppleBadge}" alt="Download on the App Store" class="store-badge"></a>`;
-        const playHtml = `<a href="${playLink}"  target="_blank" rel="noopener noreferrer"><img src="${currentPlayBadge}"  alt="Get it on Google Play"  class="store-badge"></a>`;
+        const appleHtml = `<a href="${appleLink}" target="_blank" rel="noopener noreferrer"><img src="${currentAppleBadge}" alt="Download on the App Store" class="store-badge" onerror="this.onerror=null;this.src='Assets/download-on-the-app-store-black-en-us/black.png'" /></a>`;
+        const playHtml = `<a href="${playLink}"  target="_blank" rel="noopener noreferrer"><img src="${currentPlayBadge}"  alt="Get it on Google Play"  class="store-badge" onerror="this.onerror=null;this.src='Assets/googleplay-en.png'" /></a>`;
 
         if (activeOs === 'android') {
             badgesContainer.innerHTML = playHtml;
