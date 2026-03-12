@@ -12,12 +12,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <script>
-    // Dynamic favicon for dark mode
+    // Dynamic favicon for dark mode using filter
     function setFaviconForTheme() {
         const favicon = document.getElementById('favicon');
         if (!favicon) return;
         const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        favicon.href = dark ? 'Assets/Glyph-white.svg' : 'Assets/Glyph.svg';
+        if (dark) {
+            favicon.href = 'Assets/Glyph.svg';
+            favicon.setAttribute('data-dark', 'true');
+            favicon.style.filter = 'invert(1)';
+        } else {
+            favicon.href = 'Assets/Glyph.svg';
+            favicon.removeAttribute('data-dark');
+            favicon.style.filter = '';
+        }
     }
     setFaviconForTheme();
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setFaviconForTheme);
