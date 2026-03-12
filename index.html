@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blink - Minimalist App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <img src="assets/Glyph.svg" alt="Blink Glyph" class="logo-glyph" />
+                Blink
+            </a>
+            <div class="nav-links">
+                <select id="os-toggle" class="lang-select">
+                    <option value="auto">System</option>
+                    <option value="android">Android</option>
+                    <option value="ios">iOS</option>
+                </select>
+                <select id="lang-toggle" class="lang-select">
+                    <option value="en">EN</option>
+                    <option value="pt">PT</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <div class="hero-brand">
+                        <span class="brand-name">Blink</span>
+                        <div class="app-icon-wrapper">
+                            <img src="assets/logo.png" alt="Blink Logo" class="app-icon" />
+                        </div>
+                    </div>
+
+                    <h1 data-i18n="hero-title">Clutter-free focus.</h1>
+                    <p data-i18n="hero-desc">A thoughtfully designed application built to keep distractions away and help you find your flow.</p>
+
+                    <div class="cta-container">
+                        <div class="download-section">
+                            <span class="download-label" data-i18n="download-label">Download:</span>
+                            <div class="store-badges-container" id="badges-container" style="display: flex; justify-content: center; gap: 16px;">
+                                <!-- Badges injected via JS -->
+                            </div>
+                        </div>
+                        <button id="how-to-use-btn" class="how-to-btn">
+                            <span class="q-icon">?</span>
+                            <span data-i18n="tutorial-title">How to use</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hero-mockup">
+                    <img src="assets/iphone-mockup.png" alt="Blink App iPhone Mockup" />
+                </div>
+            </section>
+
+            <section id="tutorial" class="tutorial">
+                <div class="tutorial-item shadow-card">
+                    <h3 data-i18n="download-where-title">Where to find books</h3>
+                    <p data-i18n="download-where-desc">You can find free EPUB and PDF books on sites like Project Gutenberg, Standard Ebooks, dLivros, or Open Library.</p>
+                </div>
+                <div class="tutorial-item shadow-card">
+                    <h3 data-i18n="import-title">How to import books</h3>
+                    <p data-i18n="import-desc">Tap the 'Add book' button in the app and select your EPUB or PDF files from your device.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p data-i18n="footer-copy">&copy; 2026 Leonardo Littig</p>
+            <div class="footer-links">
+                <a href="https://www.instagram.com/blinkspeedreading/" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">Instagram &nbsp;
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+                <a href="https://www.tiktok.com/@blinkspeedreading" target="_blank" rel="noopener noreferrer" class="social-link" title="TikTok">TikTok &nbsp;
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.13-1.39V15.5c0 2.22-.84 4.35-2.39 5.92-1.55 1.57-3.66 2.58-5.88 2.58-2.22 0-4.33-1.01-5.88-2.58-1.55-1.57-2.39-3.7-2.39-5.92 0-2.22.84-4.35 2.39-5.92 1.55-1.57 3.66-2.58 5.88-2.58.4 0 .8.04 1.2.11V11.2c-.4-.06-.8-.11-1.2-.11-1.31 0-2.56.55-3.48 1.5-.92.95-1.42 2.21-1.42 3.5s.5 2.55 1.42 3.5c.92.95 2.17 1.5 3.48 1.5 1.31 0 2.56-.55 3.48-1.5.92-.95 1.42-2.21 1.42-3.5V0h-.01z"/></svg>
+                </a>
+                <a href="https://www.youtube.com/@Blink-SpeedReading" target="_blank" rel="noopener noreferrer" class="social-link" title="YouTube">YouTube &nbsp;
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2C1 8.14 1 12 1 12s0 3.86.42 5.58a2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.42a2.78 2.78 0 0 0 1.94-2C23 15.86 23 12 23 12s0-3.86-.42-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg>
+                </a>
+                <a href="https://github.com/leobloedow" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">GitHub &nbsp;
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
