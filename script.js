@@ -10,12 +10,12 @@ const translations = {
         'feat2-desc': "Start working immediately. Sane defaults mean you don't spend hours tweaking your settings.",
         'feat3-title': 'Uncompromising Speed',
         'feat3-desc': 'Built with performance as the primary goal. Blink opens instantly and uses barely any memory.',
-                'footer-copy': '&copy; 2026 Leonardo Littig',
+        'footer-copy': '&copy; 2026 Leonardo Littig',
         'tutorial-title': 'How to use',
         'import-title': 'How to import books',
         'import-desc': "Tap the 'Add book' button in the app and select your EPUB or PDF files from your device.",
         'download-where-title': 'Where to find books',
-                'download-where-desc': 'You can find free EPUB and PDF books on sites like <a href="https://www.gutenberg.org/" target="_blank" class="text-link">Project Gutenberg</a>, <a href="https://standardebooks.org/" target="_blank" class="text-link">Standard Ebooks</a>, <a href="https://dlivros.com/" target="_blank" class="text-link">dLivros</a>, or <a href="https://openlibrary.org/" target="_blank" class="text-link">Open Library</a>.'
+        'download-where-desc': 'You can find free EPUB and PDF books on sites like <a href="https://www.gutenberg.org/" target="_blank" class="text-link">Project Gutenberg</a>, <a href="https://standardebooks.org/" target="_blank" class="text-link">Standard Ebooks</a>, <a href="https://dlivros.com/" target="_blank" class="text-link">dLivros</a>, or <a href="https://openlibrary.org/" target="_blank" class="text-link">Open Library</a>.'
     },
     'pt': {
         'hero-title': '<div>A <span class="highlight">leitura</span> fica mais <span class="highlight">fácil</span>.</div><div>Uma <span class="highlight">palavra</span> de cada vez.</div>',
@@ -28,12 +28,12 @@ const translations = {
         'feat2-desc': 'Comece a trabalhar imediatamente. Padrões sensatos significam que você não gasta horas ajustando suas configurações.',
         'feat3-title': 'Velocidade Incomparável',
         'feat3-desc': 'Construído com desempenho como objetivo principal. O Blink abre instantaneamente e quase não usa memória.',
-                'footer-copy': '&copy; 2026 Leonardo Littig',
+        'footer-copy': '&copy; 2026 Leonardo Littig',
         'tutorial-title': 'Como usar',
         'import-title': 'Como importar livros',
         'import-desc': "Toque no botão 'Adicionar livro' no app e selecione seus arquivos EPUB ou PDF do seu dispositivo.",
         'download-where-title': 'Onde encontrar livros',
-                'download-where-desc': 'Você pode encontrar livros EPUB e PDF gratuitos em sites como <a href="https://www.gutenberg.org/" target="_blank" class="text-link">Project Gutenberg</a>, <a href="https://standardebooks.org/" target="_blank" class="text-link">Standard Ebooks</a>, <a href="https://dlivros.com/" target="_blank" class="text-link">dLivros</a> ou <a href="https://openlibrary.org/" target="_blank" class="text-link">Open Library</a>.'
+        'download-where-desc': 'Você pode encontrar livros EPUB e PDF gratuitos em sites como <a href="https://www.gutenberg.org/" target="_blank" class="text-link">Project Gutenberg</a>, <a href="https://standardebooks.org/" target="_blank" class="text-link">Standard Ebooks</a>, <a href="https://dlivros.com/" target="_blank" class="text-link">dLivros</a> ou <a href="https://openlibrary.org/" target="_blank" class="text-link">Open Library</a>.'
     }
 };
 
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
             if (translations[currentLang][key]) {
-                                if (key === 'footer-copy' || key === 'hero-title' || key === 'download-where-desc') {
+                if (key === 'footer-copy' || key === 'hero-title' || key === 'download-where-desc') {
                     el.innerHTML = translations[currentLang][key];
                 } else {
                     el.textContent = translations[currentLang][key];
@@ -85,19 +85,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const badgesContainer = document.getElementById('badges-container');
         badgesContainer.innerHTML = '';
 
-        const appleLink  = 'https://apple.co/46Sr38N';
-        const playLink   = 'https://play.google.com/store/apps/details?id=com.leonardolittig.blink';
+        const appleLink = 'https://apple.co/46Sr38N';
+        const playLink = 'https://play.google.com/store/apps/details?id=com.leonardolittig.blink';
 
-        const appleBadgeEn = 'assets/download-on-the-app-store-black-en-us/black.svg';
-        const appleBadgePt = 'assets/download-on-the-app-store-black-pt-br/black.svg';
-        const playBadgeEn  = 'assets/GetItOnGooglePlay_Badge_Web_color_English.svg';
-        const playBadgePt  = 'assets/GetItOnGooglePlay_Badge_Web_color_Portuguese-Brazil.svg';
+        const appleBadgeEn = 'Assets/download-on-the-app-store-black-en-us/black.svg';
+        const appleBadgePt = 'Assets/download-on-the-app-store-black-pt-br/black.svg';
+        const playBadgeEn = 'Assets/GetItOnGooglePlay_Badge_Web_color_English.svg';
+        const playBadgePt = 'Assets/GetItOnGooglePlay_Badge_Web_color_Portuguese-Brazil.svg';
 
         const currentAppleBadge = currentLang === 'pt' ? appleBadgePt : appleBadgeEn;
-        const currentPlayBadge  = currentLang === 'pt' ? playBadgePt  : playBadgeEn;
+        const currentPlayBadge = currentLang === 'pt' ? playBadgePt : playBadgeEn;
 
         const appleHtml = `<a href="${appleLink}" target="_blank" rel="noopener noreferrer"><img src="${currentAppleBadge}" alt="Download on the App Store" class="store-badge"></a>`;
-        const playHtml  = `<a href="${playLink}"  target="_blank" rel="noopener noreferrer"><img src="${currentPlayBadge}"  alt="Get it on Google Play"  class="store-badge"></a>`;
+        const playHtml = `<a href="${playLink}"  target="_blank" rel="noopener noreferrer"><img src="${currentPlayBadge}"  alt="Get it on Google Play"  class="store-badge"></a>`;
 
         if (activeOs === 'android') {
             badgesContainer.innerHTML = playHtml;
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateUI();
     });
 
-        osToggle.addEventListener('change', (e) => {
+    osToggle.addEventListener('change', (e) => {
         currentOs = e.target.value;
         updateUI();
     });
