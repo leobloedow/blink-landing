@@ -344,8 +344,10 @@ nav {
 /* App icon — shadow on wrapper, mask on img to avoid clipping */
 .app-icon-wrapper {
     margin-bottom: 0;
-    filter:
-        drop-shadow(0 -4px 14px rgba(255, 235, 255, 1)) drop-shadow(6px 12px 20px rgba(0, 0, 0, 0.16)) drop-shadow(3px 4px 8px rgba(0, 0, 0, 0.08));
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+    transform: translateZ(0); /* Hardware acceleration */
+    will-change: filter;
+    transition: filter 0.3s ease;
 }
 
 .app-icon {
