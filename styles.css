@@ -54,7 +54,7 @@ body::after {
     width: 100%;
     height: 100%;
     background-image: url('Assets/leaves.png');
-    background-size: 1500px auto;
+    background-size: 1200px 1000px;
     background-repeat: no-repeat;
     background-attachment: scroll;
     mix-blend-mode: multiply;
