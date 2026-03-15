@@ -113,6 +113,21 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             badgesContainer.innerHTML = appleHtml + playHtml;
         }
+
+        // Update hero videos
+        const videoEn = document.getElementById('video-en');
+        const videoPt = document.getElementById('video-pt');
+        if (videoEn && videoPt) {
+            if (currentLang === 'pt') {
+                videoEn.style.display = 'none';
+                videoPt.style.display = 'block';
+                videoPt.play().catch(e => console.log("Video play prep failed:", e));
+            } else {
+                videoPt.style.display = 'none';
+                videoEn.style.display = 'block';
+                videoEn.play().catch(e => console.log("Video play prep failed:", e));
+            }
+        }
     }
 
     // Initial render
